@@ -7,6 +7,7 @@ barba.init({
 				return new Promise((resolve) => {
 					const timeline = gsap.timeline({
 						onComplete() {
+							current.container.remove();
 							resolve();
 						},
 					});
@@ -14,7 +15,11 @@ barba.init({
 					const navigation = current.container.querySelectorAll(
 						"header, a.next, a.previous"
 					);
-					timeline.to(navigation, { opacity: 0 });
+					const photos = current.container.querySelectorAll("div.photos");
+
+					timeline
+						.to(navigation, { opacity: 0 }, 0)
+						.to(photos, { opacity: 0.25, x: 500 }, 0);
 				});
 			},
 			next({ current, next, trigger }) {
@@ -28,9 +33,13 @@ barba.init({
 					const navigation = next.container.querySelectorAll(
 						"header, a.next, a.previous"
 					);
+					const photos = current.container.querySelectorAll("div.photos");
+
 					timeline
 						.set(navigation, { opacity: 0 })
-						.to(navigation, { opacity: 1 });
+						.set(photos, { opacity: 0.25, x: -500 })
+						.to(navigation, { opacity: 1 }, 0)
+						.to(photos, { opacity: 1, x: 0 }, 0);
 				});
 			},
 		},
