@@ -43,6 +43,8 @@ barba.init({
 				});
 			},
 			beforeEnter({ current, next, trigger }) {
+				wiperText.textContent = next.container.getAttribute("data-title");
+
 				return new Promise((resolve) => {
 					const timeline = gsap.timeline({
 						defaults: {
@@ -56,8 +58,8 @@ barba.init({
 					timeline
 						.to(wiperImg, { opacity: 1 }, 0)
 						.to(wiperText, { y: 0 }, 0)
-						.to(wiperText, { y: "100%", delay: 2 }, 2)
-						.to(wiperImg, { opacity: 0, delay: 2 }, 2);
+						.to(wiperText, { y: "100%", delay: 1.5 }, 2)
+						.to(wiperImg, { opacity: 0, delay: 1.5 }, 2);
 				});
 			},
 			enter({ current, next, trigger }) {
