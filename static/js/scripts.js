@@ -14,6 +14,8 @@ wiper.appendChild(wiperImg);
 wiper.appendChild(wiperHolder);
 bodyTag.appendChild(wiper);
 
+barba.use(barbaPrefetch);
+
 barba.init({
 	debug: true,
 	transitions: [
