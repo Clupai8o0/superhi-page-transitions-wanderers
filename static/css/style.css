@@ -1,6 +1,6 @@
 @font-face {
   font-family: Authentic Sans;
-  src: url(authentic-sans-150.woff2), url(authentic-sans-150.woff);
+  src: url(../assets/authentic-sans-150.woff2), url(../assets/authentic-sans-150.woff);
 }
 
 @keyframes spin {
@@ -53,12 +53,12 @@ a.previous, a.next {
 
 a.previous {
   left: 48px;
-  background-image: url(arrow-left.svg);
+  background-image: url(../assets/arrow-left.svg);
 }
 
 a.next {
   right: 48px;
-  background-image: url(arrow-right.svg);
+  background-image: url(../assets/arrow-right.svg);
 }
 
 a.previous:hover {
